@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@bisonai-cic/icn-contracts@^0.4.3":
-  version "0.4.3"
-  resolved "https://npm.pkg.github.com/download/@bisonai-cic/icn-contracts/0.4.3/4191fcab5e5bc8ab358a44fe7d3be094a6ef5280#4191fcab5e5bc8ab358a44fe7d3be094a6ef5280"
-  integrity sha512-alAhzrpOyrvwcDFpFGP73NYTyukPWgx3Ne5kRn8yN6VIyL6q7ItgA2Z8LpxQCMUD0l/GL3krMBgAESn7QkyFqg==
+"@bisonai/orakl-contracts@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@bisonai/orakl-contracts/-/orakl-contracts-0.4.4.tgz#7fe0fc89b12f81300cc825375b54972b4cb97e1a"
+  integrity sha512-zr4ymdw4vUSWj7E1nxKQHhh0SOfrup9TlsXN41gSIfQxoU3fSpJ4FM8S6DSMiCpIeXzWzn67y1dcllqn+50GvQ==
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
