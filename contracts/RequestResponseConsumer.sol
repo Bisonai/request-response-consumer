@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
-import '@bisonai-cic/icn-contracts/src/v0.1/RequestResponseConsumerBase.sol';
-import '@bisonai-cic/icn-contracts/src/v0.1/interfaces/RequestResponseCoordinatorInterface.sol';
+import "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
+import "@bisonai/orakl-contracts/src/v0.1/interfaces/RequestResponseCoordinatorInterface.sol";
 
 contract RequestResponseConsumer is RequestResponseConsumerBase {
     using Orakl for Orakl.Request;
