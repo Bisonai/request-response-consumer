@@ -13,7 +13,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     return
   }
 
-  const requestResponseConsumerDeployment = await deploy('RequestResponseConsumer', {
+  await deploy('RequestResponseConsumer', {
     args: [coordinatorAddress],
     from: deployer,
     log: true
