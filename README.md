@@ -36,7 +36,7 @@ You can convert your newly generated mnemonic with following hardhat task.
 Please replace the `[MENONIC]` with your mnemonic.
 
 ```shell
-npx hardhat --mnemonic [MNEMONIC]
+npx hardhat address --mnemonic [MNEMONIC]
 ```
 
 The script will print out a public address corresponding to your mnemonic.
@@ -70,8 +70,8 @@ The script below will create a new account and deposit 1 KLAY from address corre
 If you prefer to use Orakl Network Request-Response without having a long-lasting account, you can use **Direct Payment** method.
 In such case, you can skip the following command and go directly to **Request data with Direct Payment**.
 
-```
-npx hardhat run scripts/create-and-fund.ts --network baobab
+```shell
+npx hardhat run scripts/create-and-fund-account.ts --network baobab
 ```
 
 After successfully executing the command above, set the value of environment variable `ACC_ID` inside of `.env` file to account ID that was generated using the script above.
@@ -85,18 +85,18 @@ To deploy `RequestResponseConsumer`, run `npx hardhat deploy --network baobab`.
 
 ### Request data with Prepayment
 
-```
+```shell
 npx hardhat run scripts/request-data.ts --network baobab
 ```
 
 ### Request data with Direct Payment
 
-```
+```shell
 npx hardhat run scripts/request-data-direct.ts --network baobab
 ```
 
 ### Read response
 
-```
+```shell
 npx hardhat run scripts/read-response.ts --network baobab
 ```
