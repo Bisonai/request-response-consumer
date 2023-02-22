@@ -1,6 +1,6 @@
 # Request-Response Consumer
 
-Consumer smart contract that utilizes Request-Response functionality from [Orakl Network](https://github.com/bisonai-cic/orakl).
+Consumer smart contract that utilizes Request-Response functionality from [Orakl Network](https://orakl.network).
 
 > Warning: This repository and smart contract are meant to be for deployment on [`Baobab`](https://docs.klaytn.foundation/misc/faq#what-is-cypress-what-is-baobab).
 
