@@ -6,8 +6,8 @@ Consumer smart contract that utilizes Request-Response functionality from [Orakl
 
 Internally, the scripts access following smart contracts:
 
-* `Prepayment` ([0xE22e67F7ce4b6FA9E3ABCB6125Fb53Cb577B34Ef](https://baobab.scope.klaytn.com/account/0xE22e67F7ce4b6FA9E3ABCB6125Fb53Cb577B34Ef))
-* `RequestResponseCoordinator` ([0x671cfC6Df033C0773e0B65815433C5E264FeA63f](https://baobab.scope.klaytn.com/account/0x671cfC6Df033C0773e0B65815433C5E264FeA63f))
+- `Prepayment` ([0x75e604c28b7e90af3019ae6982b294a70adc3581](https://baobab.scope.klaytn.com/account/0x75e604c28b7e90af3019ae6982b294a70adc3581))
+- `RequestResponseCoordinator` ([0x402ab86A36686980F47C7097483d3ff1EAd5efE9](https://baobab.scope.klaytn.com/account/0x402ab86A36686980F47C7097483d3ff1EAd5efE9))
 
 If you want to access different deployments of `Prepayment` or `RequestResponseCoordinator`, you can change it inside `hardhat.config.ts` in `namedAccounts` property.
 
