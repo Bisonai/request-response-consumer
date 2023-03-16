@@ -44,7 +44,7 @@ Please replace the `MENONIC` with your mnemonic and run the command below.
 
 
 ```shell
-npx hardhat address --mnemonic 'MNEMONIC'
+npx hardhat address --mnemonic ${MNEMONIC}
 ```
 
 The script will print out a public address corresponding to your mnemonic.
