@@ -40,7 +40,7 @@ If you do not have any KLAY in your account, you cannot deploy smart contracts o
 
 You can convert your newly generated mnemonic with following hardhat task.
 
-Please replace the `MENONIC` with your mnemonic and run the command below.
+Please replace the `MNENONIC` with your mnemonic and run the command below.
 
 
 ```shell
