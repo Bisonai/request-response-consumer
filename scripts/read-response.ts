@@ -4,7 +4,7 @@ async function main() {
   const userContract = await ethers.getContract('RequestResponseConsumer')
   console.log('RequestResponseConsumer', userContract.address)
 
-  const response = await userContract.s_response()
+  const response = await userContract.sResponse()
   console.log(`Response ${response}`)
 }
 

@@ -33,14 +33,18 @@ This repository supports connection to wallet either through mnemonic or private
 npx mnemonics
 ```
 
-After mnemonic is generated, you need to convert it to public address and fund it with KLAY.
+After mnemonic is generated, store it in `MNEMONIC` variable inside of .env file.
+
+Now you need to convert it to public address and fund it with KLAY.
 If you do not have any KLAY in your account, you cannot deploy smart contracts or make any transactions.
 
 You can convert your newly generated mnemonic with following hardhat task.
-Please replace the `[MENONIC]` with your mnemonic.
+
+Please replace the `MNENONIC` with your mnemonic and run the command below.
+
 
 ```shell
-npx hardhat address --mnemonic [MNEMONIC]
+npx hardhat address --mnemonic ${MNEMONIC}
 ```
 
 The script will print out a public address corresponding to your mnemonic.
