@@ -21,7 +21,7 @@ cp .env.example .env
 ```
 
 `PROVIDER` can be set to any JSON-RPC endpoint.
-The list of free available JSON-RPC endpoint can be found in [official Klaytn documentation](https://docs.klaytn.foundation/content/dapp/json-rpc/public-en#testnet-baobab-public-json-rpc-endpoints).
+The list of free available JSON-RPC endpoint can be found in [official Klaytn documentation](https://docs.klaytn.foundation/content/dapp/rpc-service/public-en#testnet-baobab-public-json-rpc-endpoints).
 
 This repository supports connection to wallet either through mnemonic or private key.
 
@@ -41,7 +41,6 @@ If you do not have any KLAY in your account, you cannot deploy smart contracts o
 You can convert your newly generated mnemonic with following hardhat task.
 
 Please replace the `MNENONIC` with your mnemonic and run the command below.
-
 
 ```shell
 npx hardhat address --mnemonic ${MNEMONIC}
@@ -113,4 +112,56 @@ npx hardhat run scripts/request-data-direct.ts --network baobab
 
 ```shell
 npx hardhat run scripts/read-response.ts --network baobab
+```
+
+## Hardhat Tasks
+
+### Create new account
+
+```shell
+npx hardhat createAccount --network baobab
+```
+
+### Deposit to account
+
+After you have created an account, you can deposit $KLAY to it anytime using the command below.
+
+```shell
+npx hardhat deposit \
+    --account-id $ACCOUNT \
+    --amount $AMOUNT \
+    --network $NETWORK
+```
+
+### Withdraw from account
+
+To withdraw the remaining balance from account, you can use the command below.
+
+```shell
+npx hardhat withdraw \
+    --account-id $ACCOUNT \
+    --amount $AMOUNT \
+    --network $NETWORK
+```
+
+### Add consumer
+
+Add consumer contract to account. Then, consumer contract will be able to request for Request Responce service.
+
+```shell
+npx hardhat addConsumer \
+    --consumer $CONSUMERADDRESS \
+    --account-id $ACCOUNT \
+    --network $NETWORK
+```
+
+### Remove consumer
+
+Remove consumer contract from account. Then, consumer contract will not be able to request for Request Responce service anymore.
+
+```shell
+npx hardhat removeConsumer \
+    --consumer ${CONSUMERADDRESS} \
+    --account-id ${ACCOUNT} \
+    --network ${NETWORK}
 ```
