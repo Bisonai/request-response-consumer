@@ -5,6 +5,30 @@ import { RequestResponseConsumerFulfillUint128 } from "@bisonai/orakl-contracts/
 import { RequestResponseConsumerBase } from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
 import { Orakl } from "@bisonai/orakl-contracts/src/v0.1/libraries/Orakl.sol";
 
+// @notice `RequestResponseConsumer` contract requests BTC/USDT price
+// @notice pair from Coinbase API through Orakl Network
+// @notice Request-Response service.  In this example code, we request
+// @notice `uint128` data type, and use
+// @notice `RequestResponseConsumerFulfillUint128` abstract contract
+// @notice which allows to fulfill requested price by off-chain Orakl Network
+// @notice in `uint128` data type.
+// @notice In case, we need to receive other data types, we can create
+// @notice a jobID for any of the following data types:
+// @notice  * uint128,
+// @notice  * int256,
+// @notice  * bool,
+// @notice  * string,
+// @notice  * bytes32,
+// @notice  * bytes.
+// @notice Then, we also need to inherit a corresponding abstract
+// @notice contract:
+// @notice  * `RequestResponseConsumerFulfillUint128`,
+// @notice  * `RequestResponseConsumerFulfillInt256`,
+// @notice  * `RequestResponseConsumerFulfillBool`,
+// @notice  * `RequestResponseConsumerFulfillString`,
+// @notice  * `RequestResponseConsumerFulfillBytes32`,
+// @notice  * `RequestResponseConsumerFulfillBytes`,
+// @notice respectively.
 contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
     using Orakl for Orakl.Request;
     uint256 public sResponse;
