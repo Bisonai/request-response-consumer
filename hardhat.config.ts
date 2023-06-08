@@ -56,10 +56,10 @@ const config: HardhatUserConfig = {
       default: 0
     },
     prepayment: {
-      baobab: '0x75e604c28b7e90af3019ae6982b294a70adc3581'
+      baobab: '0xf37a736b476fCEaB261371A3B3B330772630b0bF'
     },
     requestResponseCoordinator: {
-      baobab: '0x402ab86A36686980F47C7097483d3ff1EAd5efE9'
+      baobab: '0x9c73342afD279Cb3106a8F45788973F512d9e40a'
     }
   }
 }
