@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
-import "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
-import "@bisonai/orakl-contracts/src/v0.1/interfaces/RequestResponseCoordinatorInterface.sol";
+import { RequestResponseConsumerFulfillUint128 } from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerFulfill.sol";
+import { RequestResponseConsumerBase } from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
+import { Orakl } from "@bisonai/orakl-contracts/src/v0.1/libraries/Orakl.sol";
 
-contract RequestResponseConsumer is RequestResponseConsumerBase {
+contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
     using Orakl for Orakl.Request;
     uint256 public sResponse;
     address private sOwner;
@@ -33,16 +34,19 @@ contract RequestResponseConsumer is RequestResponseConsumerBase {
         onlyOwner
         returns (uint256 requestId)
     {
-        bytes32 jobId = keccak256(abi.encodePacked("any-api-int256"));
+        bytes32 jobId = keccak256(abi.encodePacked("uint128"));
+        uint8 numSubmission = 1;
 
         Orakl.Request memory req = buildRequest(jobId);
-        req.add("get", "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD");
-        req.add("path", "RAW,ETH,USD,PRICE");
+        req.add("get", "https://api.coinbase.com/v2/exchange-rates?currency=BTC");
+        req.add("path", "data,rates,USDT");
+        req.add("pow10", "8");
 
         requestId = COORDINATOR.requestData(
             req,
             callbackGasLimit,
-            accId
+            accId,
+            numSubmission
         );
     }
 
@@ -54,21 +58,25 @@ contract RequestResponseConsumer is RequestResponseConsumerBase {
         onlyOwner
         returns (uint256 requestId)
     {
-        bytes32 jobId = keccak256(abi.encodePacked("any-api-int256"));
+        bytes32 jobId = keccak256(abi.encodePacked("uint128"));
+        uint8 numSubmission = 1;
 
         Orakl.Request memory req = buildRequest(jobId);
-        req.add("get", "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD");
-        req.add("path", "RAW,ETH,USD,PRICE");
+        req.add("get", "https://api.coinbase.com/v2/exchange-rates?currency=BTC");
+        req.add("path", "data,rates,USDT");
+        req.add("pow10", "8");
 
         requestId = COORDINATOR.requestData{value: msg.value}(
             req,
-            callbackGasLimit
+            callbackGasLimit,
+            numSubmission,
+            address(this)
         );
     }
 
     function fulfillDataRequest(
         uint256 /*requestId*/,
-        uint256 response
+        uint128 response
     )
         internal
         override

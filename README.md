@@ -116,13 +116,15 @@ npx hardhat run scripts/read-response.ts --network baobab
 
 ## Hardhat Tasks
 
-### Create new account
+The following tasks allow for more finer control over experimentation with the example code in this repository.
+
+### Create a new account
 
 ```shell
 npx hardhat createAccount --network baobab
 ```
 
-### Deposit to account
+### Deposit to an account
 
 After you have created an account, you can deposit $KLAY to it anytime using the command below.
 
@@ -133,9 +135,9 @@ npx hardhat deposit \
     --network $NETWORK
 ```
 
-### Withdraw from account
+### Withdraw from an account
 
-To withdraw the remaining balance from account, you can use the command below.
+To withdraw the remaining balance from an account, you can use the command below.
 
 ```shell
 npx hardhat withdraw \
@@ -144,9 +146,10 @@ npx hardhat withdraw \
     --network $NETWORK
 ```
 
-### Add consumer
+### Add a consumer
 
-Add consumer contract to account. Then, consumer contract will be able to request for Request Responce service.
+Add consumer contract to account.
+Then, the consumer contract will be able to request for VRF service.
 
 ```shell
 npx hardhat addConsumer \
@@ -155,9 +158,10 @@ npx hardhat addConsumer \
     --network $NETWORK
 ```
 
-### Remove consumer
+### Remove a consumer
 
-Remove consumer contract from account. Then, consumer contract will not be able to request for Request Responce service anymore.
+Remove a consumer contract from an account.
+Then, the consumer contract will not be able to request for VRF service anymore.
 
 ```shell
 npx hardhat removeConsumer \
