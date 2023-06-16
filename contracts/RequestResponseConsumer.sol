@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.16;
 
-import { RequestResponseConsumerFulfillUint128 } from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerFulfill.sol";
-import { RequestResponseConsumerBase } from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
-import { Orakl } from "@bisonai/orakl-contracts/src/v0.1/libraries/Orakl.sol";
+import {RequestResponseConsumerFulfillUint128} from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerFulfill.sol";
+import {RequestResponseConsumerBase} from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
+import {Orakl} from "@bisonai/orakl-contracts/src/v0.1/libraries/Orakl.sol";
 
 // @notice `RequestResponseConsumer` contract requests BTC/USDT price
 // @notice pair from Coinbase API through Orakl Network
@@ -51,13 +51,9 @@ contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
     receive() external payable {}
 
     function requestData(
-      uint64 accId,
-      uint32 callbackGasLimit
-    )
-        public
-        onlyOwner
-        returns (uint256 requestId)
-    {
+        uint64 accId,
+        uint32 callbackGasLimit
+    ) public onlyOwner returns (uint256 requestId) {
         bytes32 jobId = keccak256(abi.encodePacked("uint128"));
         uint8 numSubmission = 1;
 
@@ -66,22 +62,12 @@ contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
         req.add("path", "data,rates,USDT");
         req.add("pow10", "8");
 
-        requestId = COORDINATOR.requestData(
-            req,
-            callbackGasLimit,
-            accId,
-            numSubmission
-        );
+        requestId = COORDINATOR.requestData(req, callbackGasLimit, accId, numSubmission);
     }
 
     function requestDataDirectPayment(
-      uint32 callbackGasLimit
-    )
-        public
-        payable
-        onlyOwner
-        returns (uint256 requestId)
-    {
+        uint32 callbackGasLimit
+    ) public payable onlyOwner returns (uint256 requestId) {
         bytes32 jobId = keccak256(abi.encodePacked("uint128"));
         uint8 numSubmission = 1;
 
@@ -98,13 +84,7 @@ contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
         );
     }
 
-    function fulfillDataRequest(
-        uint256 /*requestId*/,
-        uint128 response
-    )
-        internal
-        override
-    {
+    function fulfillDataRequest(uint256 /*requestId*/, uint128 response) internal override {
         sResponse = response;
     }
 }

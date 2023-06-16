@@ -8,7 +8,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   console.log('0-RequestResponseConsumer.ts')
 
-  if (network.name != 'baobab') {
+  if (network.name == 'localhost') {
     console.log('Skipping')
     return
   }
