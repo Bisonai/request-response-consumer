@@ -91,7 +91,7 @@ task('cancelAccount', 'Cancel account')
     const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
 
     const accId = taskArgs.accountId || process.env.ACC_ID
-    const to = taskArgs.amount
+    const to = taskArgs.to
 
     const txReceipt = await (await prepayment.cancelAccount(accId, to)).wait()
 
