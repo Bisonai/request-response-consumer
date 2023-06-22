@@ -4,6 +4,7 @@ pragma solidity ^0.8.16;
 import {RequestResponseConsumerFulfillUint128} from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerFulfill.sol";
 import {RequestResponseConsumerBase} from "@bisonai/orakl-contracts/src/v0.1/RequestResponseConsumerBase.sol";
 import {Orakl} from "@bisonai/orakl-contracts/src/v0.1/libraries/Orakl.sol";
+import {IPrepayment} from "@bisonai/orakl-contracts/src/v0.1/interfaces/IPrepayment.sol";
 
 // @notice `RequestResponseConsumer` contract requests BTC/USDT price
 // @notice pair from Coinbase API through Orakl Network
@@ -86,5 +87,14 @@ contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
 
     function fulfillDataRequest(uint256 /*requestId*/, uint128 response) internal override {
         sResponse = response;
+    }
+
+    function cancelRequest(uint256 requestId) external onlyOwner {
+        COORDINATOR.cancelRequest(requestId);
+    }
+
+    function withdrawTemporary(uint64 accId) external onlyOwner {
+        address prepaymentAddress = COORDINATOR.getPrepaymentAddress();
+        IPrepayment(prepaymentAddress).withdrawTemporary(accId, payable(msg.sender));
     }
 }
