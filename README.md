@@ -2,12 +2,17 @@
 
 Consumer smart contract that utilizes Request-Response functionality from [Orakl Network](https://orakl.network).
 
-> Warning: This repository and smart contract are meant to be for deployment on [`Baobab`](https://docs.klaytn.foundation/misc/faq#what-is-cypress-what-is-baobab).
-
 Internally, the scripts access following smart contracts:
 
-- `Prepayment` ([0xf37a736b476fCEaB261371A3B3B330772630b0bF](https://baobab.scope.klaytn.com/account/0xf37a736b476fCEaB261371A3B3B330772630b0bF))
-- `RequestResponseCoordinator` ([0x9c73342afD279Cb3106a8F45788973F512d9e40a](https://baobab.scope.klaytn.com/account/0x9c73342afD279Cb3106a8F45788973F512d9e40a))
+Baobab
+
+- `Prepayment` ([0xf37a736b476fCEaB261371A3B3B330772630b0bF](https://baobab.klaytnfinder.io/account/0xf37a736b476fCEaB261371A3B3B330772630b0bF))
+- `RequestResponseCoordinator` ([0x9c73342afD279Cb3106a8F45788973F512d9e40a](https://baobab.klaytnfinder.io/account/0x9c73342afD279Cb3106a8F45788973F512d9e40a))
+
+Cypress
+
+- `Prepayment` ([0xCD54643C2Cd905e31d1ca1bF6617cbA9746F2e37](https://www.klaytnfinder.io/account/0xCD54643C2Cd905e31d1ca1bF6617cbA9746F2e37))
+- `RequestResponseCoordinator` ([0x5bd3e5864afdad872f3b99c030600ba25fdfa293](https://www.klaytnfinder.io/account/0x5bD3E5864AfDad872F3b99c030600bA25FdfA293))
 
 If you want to access different deployments of `Prepayment` or `RequestResponseCoordinator`, you can change it inside `hardhat.config.ts` in `namedAccounts` property.
 
