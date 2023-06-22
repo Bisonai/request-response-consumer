@@ -8,11 +8,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   console.log('0-RequestResponseConsumer.ts')
 
-  if (network.name == 'localhost') {
-    console.log('Skipping')
-    return
-  }
-
   await deploy('RequestResponseConsumer', {
     args: [coordinatorAddress],
     from: deployer,
