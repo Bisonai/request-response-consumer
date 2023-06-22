@@ -149,7 +149,7 @@ npx hardhat withdraw \
 ### Add a consumer
 
 Add consumer contract to account.
-Then, the consumer contract will be able to request for Request Responce service.
+Then, the consumer contract will be able to request for Request-Responce service.
 
 ```shell
 npx hardhat addConsumer \
@@ -161,7 +161,7 @@ npx hardhat addConsumer \
 ### Remove a consumer
 
 Remove a consumer contract from an account.
-Then, the consumer contract will not be able to request for Request Responce service anymore.
+Then, the consumer contract will not be able to request for Request-Responce service anymore.
 
 ```shell
 npx hardhat removeConsumer \
