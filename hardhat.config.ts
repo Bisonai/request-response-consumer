@@ -83,6 +83,22 @@ task('createAccount', 'Create new account').setAction(async (taskArgs, hre) => {
   console.log(`Account created with ID: ${accId}`)
 })
 
+task('cancelAccount', 'Cancel account')
+  .addParam('to', 'Account address')
+  .addOptionalParam('accountId', 'Account Id')
+  .setAction(async (taskArgs, hre) => {
+    const { prepayment: prepaymentAddress } = await hre.getNamedAccounts()
+    const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
+
+    const accId = taskArgs.accountId || process.env.ACC_ID
+    const to = taskArgs.to
+
+    const txReceipt = await (await prepayment.cancelAccount(accId, to)).wait()
+
+    console.log(txReceipt)
+    console.log(`Account canceled with ID: ${accId}`)
+  })
+
 task('deposit', 'Deposit $KLAY to account')
   .addParam('amount', 'The amount of $KLAY')
   .addOptionalParam('accountId', 'Account Id')
