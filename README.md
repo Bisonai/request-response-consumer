@@ -2,12 +2,17 @@
 
 Consumer smart contract that utilizes Request-Response functionality from [Orakl Network](https://orakl.network).
 
-> Warning: This repository and smart contract are meant to be for deployment on [`Baobab`](https://docs.klaytn.foundation/misc/faq#what-is-cypress-what-is-baobab).
-
 Internally, the scripts access following smart contracts:
 
-- `Prepayment` ([0xf37a736b476fCEaB261371A3B3B330772630b0bF](https://baobab.scope.klaytn.com/account/0xf37a736b476fCEaB261371A3B3B330772630b0bF))
-- `RequestResponseCoordinator` ([0x9c73342afD279Cb3106a8F45788973F512d9e40a](https://baobab.scope.klaytn.com/account/0x9c73342afD279Cb3106a8F45788973F512d9e40a))
+Baobab
+
+- `Prepayment` ([0xf37a736b476fCEaB261371A3B3B330772630b0bF](https://baobab.klaytnfinder.io/account/0xf37a736b476fCEaB261371A3B3B330772630b0bF))
+- `RequestResponseCoordinator` ([0x9c73342afD279Cb3106a8F45788973F512d9e40a](https://baobab.klaytnfinder.io/account/0x9c73342afD279Cb3106a8F45788973F512d9e40a))
+
+Cypress
+
+- `Prepayment` ([0xFD8f232648Dc41FA425214646e0290B9AB6014ED](https://www.klaytnfinder.io/account/0xFD8f232648Dc41FA425214646e0290B9AB6014ED))
+- `RequestResponseCoordinator` ([0x31bfa67e64001330a84FBec1A6A0E4F85538eA89](https://www.klaytnfinder.io/account/0x31bfa67e64001330a84FBec1A6A0E4F85538eA89))
 
 If you want to access different deployments of `Prepayment` or `RequestResponseCoordinator`, you can change it inside `hardhat.config.ts` in `namedAccounts` property.
 
@@ -149,7 +154,7 @@ npx hardhat withdraw \
 ### Add a consumer
 
 Add consumer contract to account.
-Then, the consumer contract will be able to request for VRF service.
+Then, the consumer contract will be able to request for Request-Response service.
 
 ```shell
 npx hardhat addConsumer \
@@ -161,7 +166,7 @@ npx hardhat addConsumer \
 ### Remove a consumer
 
 Remove a consumer contract from an account.
-Then, the consumer contract will not be able to request for VRF service anymore.
+Then, the consumer contract will not be able to request for Request-Response service anymore.
 
 ```shell
 npx hardhat removeConsumer \
