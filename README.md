@@ -11,8 +11,8 @@ Baobab
 
 Cypress
 
-- `Prepayment` ([0xCD54643C2Cd905e31d1ca1bF6617cbA9746F2e37](https://www.klaytnfinder.io/account/0xCD54643C2Cd905e31d1ca1bF6617cbA9746F2e37))
-- `RequestResponseCoordinator` ([0x5bd3e5864afdad872f3b99c030600ba25fdfa293](https://www.klaytnfinder.io/account/0x5bD3E5864AfDad872F3b99c030600bA25FdfA293))
+- `Prepayment` ([0xFD8f232648Dc41FA425214646e0290B9AB6014ED](https://www.klaytnfinder.io/account/0xFD8f232648Dc41FA425214646e0290B9AB6014ED))
+- `RequestResponseCoordinator` ([0x31bfa67e64001330a84FBec1A6A0E4F85538eA89](https://www.klaytnfinder.io/account/0x31bfa67e64001330a84FBec1A6A0E4F85538eA89))
 
 If you want to access different deployments of `Prepayment` or `RequestResponseCoordinator`, you can change it inside `hardhat.config.ts` in `namedAccounts` property.
 
