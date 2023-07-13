@@ -16,8 +16,8 @@ async function main() {
     const accId = txReceipt.events[0].args.accId.toString()
     console.log(`Account ID: ${accId}`)
 
-    // Deposit 1 KLAY
-    const klayAmount = '1'
+    // Deposit 5 KLAY
+    const klayAmount = '5'
     const amount = ethers.utils.parseEther(klayAmount)
     await (await prepayment.deposit(accId, { value: amount })).wait()
     console.log(`Deposited ${klayAmount} KLAY to account ID ${accId}`)

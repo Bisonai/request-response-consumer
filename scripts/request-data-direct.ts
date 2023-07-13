@@ -6,7 +6,7 @@ async function main() {
   const callbackGasLimit = 500_000
   const txReceipt = await (
     await requestResponseConsumer.requestDataDirectPayment(callbackGasLimit, {
-      value: ethers.utils.parseEther('1.0')
+      value: ethers.utils.parseEther('5.0')
     })
   ).wait()
 
