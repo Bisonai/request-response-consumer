@@ -13,7 +13,8 @@ async function main() {
     const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
 
     const { balance, reqCount, owner, consumers } = await prepayment.getAccount(ACC_ID)
-    const amountKlay = balance / Number(ethers.utils.parseEther('1.0'))
+    const amountKlay = ethers.utils.formatUnits(balance, 'ether')
+
     console.log(`balance:\t${balance}`)
     console.log(`balance:\t${amountKlay} Klay`)
     console.log(`reqCount:\t${reqCount}`)
