@@ -148,7 +148,8 @@ task('addConsumer', 'Add consumer')
   .addOptionalParam('accountId', 'Account Id')
   .setAction(async (taskArgs, hre) => {
     const accId = taskArgs.accountId || process.env.ACC_ID
-    const consumerAddress = taskArgs.consumer || (await ethers.getContract('VRFConsumer')).address
+    const consumerAddress =
+      taskArgs.consumer || (await ethers.getContract('RequestResponseConsumer')).address
 
     if (accId && consumerAddress) {
       const { prepayment: prepaymentAddress } = await hre.getNamedAccounts()
@@ -167,7 +168,8 @@ task('removeConsumer', 'Remove consumer')
   .addOptionalParam('accountId', 'Account Id')
   .setAction(async (taskArgs, hre) => {
     const accId = taskArgs.accountId || process.env.ACC_ID
-    const consumerAddress = taskArgs.consumer || (await ethers.getContract('VRFConsumer')).address
+    const consumerAddress =
+      taskArgs.consumer || (await ethers.getContract('RequestResponseConsumer')).address
 
     if (accId && consumerAddress) {
       const { prepayment: prepaymentAddress } = await hre.getNamedAccounts()
