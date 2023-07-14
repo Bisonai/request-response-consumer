@@ -78,12 +78,22 @@ yarn compile
 npx hardhat deploy --network baobab
 ```
 
+## Get Estimated Service Fee
+
+Prior to creating an account, you have the option to retrieve the estimated service fee for a single Request-Response data request. To do this, you can run the provided script using the following command:
+
+```shell
+npx hardhat run scripts/get-estimated-service-fee.ts --network baobab
+```
+
+Executing the script will provide you with the cost associated with a single request. This information will help you determine the amount you need to fund your account accordingly to meet your specific requirements.
+
 ## Create and fund account
 
 There are two types of payments supported by Orakle Network Request-Response: **Prepayment** and **Direct Payment**.
 
 **Prepayment** requires user to create account and fund it with KLAY before being able to use it.
-The script below will create a new account and deposit 1 KLAY from address corresponding to your mnemonic from `.env` file.
+The script below will create a new account and deposit `5` KLAY from address corresponding to your mnemonic from `.env` file.
 
 If you prefer to use Orakl Network Request-Response without having a long-lasting account, you can use **Direct Payment** method.
 In such case, you can skip the following command and go directly to **Request data with Direct Payment**.
