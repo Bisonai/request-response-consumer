@@ -32,7 +32,7 @@ import {IPrepayment} from "@bisonai/orakl-contracts/src/v0.1/interfaces/IPrepaym
 // @notice respectively.
 contract RequestResponseConsumer is RequestResponseConsumerFulfillUint128 {
     using Orakl for Orakl.Request;
-    uint256 public sResponse;
+    uint128 public sResponse;
     address private sOwner;
 
     error OnlyOwner(address notOwner);
