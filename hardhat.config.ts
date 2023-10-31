@@ -56,12 +56,12 @@ const config: HardhatUserConfig = {
       default: 0
     },
     prepayment: {
-      baobab: '0xf37a736b476fCEaB261371A3B3B330772630b0bF',
-      cypress: '0xFD8f232648Dc41FA425214646e0290B9AB6014ED'
+      baobab: '0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7',
+      cypress: '0xc2C88492Cf7e5240C3EB49353539E75336960600'
     },
     requestResponseCoordinator: {
-      baobab: '0x9c73342afD279Cb3106a8F45788973F512d9e40a',
-      cypress: '0x31bfa67e64001330a84FBec1A6A0E4F85538eA89'
+      baobab: '0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0',
+      cypress: '0x159F3BB6609B4C709F15823F3544032942106042'
     }
   }
 }
