@@ -6,13 +6,13 @@ Internally, the scripts access following smart contracts:
 
 Baobab
 
-- `Prepayment` ([0xf37a736b476fCEaB261371A3B3B330772630b0bF](https://baobab.klaytnfinder.io/account/0xf37a736b476fCEaB261371A3B3B330772630b0bF))
-- `RequestResponseCoordinator` ([0x9c73342afD279Cb3106a8F45788973F512d9e40a](https://baobab.klaytnfinder.io/account/0x9c73342afD279Cb3106a8F45788973F512d9e40a))
+- `Prepayment` ([0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7](https://baobab.klaytnfinder.io/account/0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7))
+- `RequestResponseCoordinator` ([0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0](https://baobab.klaytnfinder.io/account/0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0))
 
 Cypress
 
-- `Prepayment` ([0xFD8f232648Dc41FA425214646e0290B9AB6014ED](https://www.klaytnfinder.io/account/0xFD8f232648Dc41FA425214646e0290B9AB6014ED))
-- `RequestResponseCoordinator` ([0x31bfa67e64001330a84FBec1A6A0E4F85538eA89](https://www.klaytnfinder.io/account/0x31bfa67e64001330a84FBec1A6A0E4F85538eA89))
+- `Prepayment` ([0xc2C88492Cf7e5240C3EB49353539E75336960600](https://www.klaytnfinder.io/account/0xc2C88492Cf7e5240C3EB49353539E75336960600))
+- `RequestResponseCoordinator` ([0x159F3BB6609B4C709F15823F3544032942106042](https://www.klaytnfinder.io/account/0x159F3BB6609B4C709F15823F3544032942106042))
 
 If you want to access different deployments of `Prepayment` or `RequestResponseCoordinator`, you can change it inside `hardhat.config.ts` in `namedAccounts` property.
 
