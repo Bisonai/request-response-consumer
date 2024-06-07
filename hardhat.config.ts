@@ -37,7 +37,9 @@ const config: HardhatUserConfig = {
   networks: {
     localhost: {
       gas: 1_400_000,
-      gasPrice: 250_000_000_000
+      gasPrice: 250_000_000_000,
+      ...commonConfig,
+      url: process.env.PROVIDER || 'http://127.0.0.1:8545'
     },
     baobab: {
       url: process.env.PROVIDER || 'https://api.baobab.klaytn.net:8651',
@@ -57,11 +59,13 @@ const config: HardhatUserConfig = {
     },
     prepayment: {
       baobab: '0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7',
-      cypress: '0xc2C88492Cf7e5240C3EB49353539E75336960600'
+      cypress: '0xc2C88492Cf7e5240C3EB49353539E75336960600',
+      localhost: '0x5FbDB2315678afecb367f032d93F642f64180aa3'
     },
     requestResponseCoordinator: {
       baobab: '0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0',
-      cypress: '0x159F3BB6609B4C709F15823F3544032942106042'
+      cypress: '0x159F3BB6609B4C709F15823F3544032942106042',
+      localhost: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'
     }
   }
 }

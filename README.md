@@ -78,6 +78,8 @@ yarn compile
 npx hardhat deploy --network baobab
 ```
 
+If you are using [orakl-repository](https://github.com/Bisonai/orakl/) to run a local node, you can also deploy this `RequestResponseConsumer` on your local node. The `Prepayment` and `RequestResponseCoordinator` addresses in [hardhat.config.ts](hardhat.config.ts) `namedAccounts` are configured properly to be used locally.
+
 ## Get Estimated Service Fee
 
 Prior to creating an account, you have the option to retrieve the estimated service fee for a single Request-Response data request. To do this, you can run the provided script using the following command:
