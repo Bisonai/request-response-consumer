@@ -103,45 +103,45 @@ task('cancelAccount', 'Cancel account')
     console.log(`Account canceled with ID: ${accId}`)
   })
 
-task('deposit', 'Deposit $KLAY to account')
-  .addParam('amount', 'The amount of $KLAY')
+task('deposit', 'Deposit $KAIA to account')
+  .addParam('amount', 'The amount of $KAIA')
   .addOptionalParam('accountId', 'Account Id')
   .setAction(async (taskArgs, hre) => {
     const accId = taskArgs.accountId || process.env.ACC_ID
-    const klayAmount = taskArgs.amount
+    const kaiaAmount = taskArgs.amount
 
     if (accId) {
       const { prepayment: prepaymentAddress } = await hre.getNamedAccounts()
       const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
-      const amount = ethers.utils.parseEther(klayAmount)
+      const amount = ethers.utils.parseEther(kaiaAmount)
       const txReceipt = await (await prepayment.deposit(accId, { value: amount })).wait()
       const balance = txReceipt.events[0].args.newBalance.toString()
       const newBalance = ethers.utils.formatEther(balance)
 
-      console.log(`Deposited ${klayAmount} $KLAY to account ${accId}`)
-      console.log(`Account balance after deposit: ${newBalance} $KLAY`)
+      console.log(`Deposited ${kaiaAmount} $KAIA to account ${accId}`)
+      console.log(`Account balance after deposit: ${newBalance} $KAIA`)
     } else {
       console.log(`Prepayment accountId is not defined`)
     }
   })
 
-task('withdraw', 'Withdraw $KLAY from account')
-  .addParam('amount', 'The amount of $KLAY')
+task('withdraw', 'Withdraw $KAIA from account')
+  .addParam('amount', 'The amount of $KAIA')
   .addOptionalParam('accountId', 'Account Id')
   .setAction(async (taskArgs, hre) => {
     const accId = taskArgs.accountId || process.env.ACC_ID
-    const klayAmount = taskArgs.amount
+    const kaiaAmount = taskArgs.amount
 
     if (accId) {
       const { prepayment: prepaymentAddress } = await hre.getNamedAccounts()
       const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
-      const amount = ethers.utils.parseEther(klayAmount)
+      const amount = ethers.utils.parseEther(kaiaAmount)
       const txReceipt = await (await prepayment.withdraw(accId, amount)).wait()
       const balance = txReceipt.events[0].args.newBalance.toString()
       const newBalance = ethers.utils.formatEther(balance)
 
-      console.log(`Withdrew ${klayAmount} $KLAY to account ${accId}`)
-      console.log(`Account balance after withdrawal: ${newBalance} $KLAY`)
+      console.log(`Withdrew ${kaiaAmount} $KAIA to account ${accId}`)
+      console.log(`Account balance after withdrawal: ${newBalance} $KAIA`)
     } else {
       console.log(`Prepayment accountId is not defined`)
     }

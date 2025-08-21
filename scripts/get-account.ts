@@ -13,10 +13,10 @@ async function main() {
     const prepayment = await ethers.getContractAt(Prepayment__factory.abi, prepaymentAddress)
 
     const { balance, reqCount, owner, consumers } = await prepayment.getAccount(ACC_ID)
-    const amountKlay = ethers.utils.formatUnits(balance, 'ether')
+    const amountKaia = ethers.utils.formatUnits(balance, 'ether')
 
     console.log(`balance:\t${balance}`)
-    console.log(`balance:\t${amountKlay} Klay`)
+    console.log(`balance:\t${amountKaia} $KAIA`)
     console.log(`reqCount:\t${reqCount}`)
     console.log(`owner:\t\t${owner}`)
     console.log(`consumers:\t${consumers}`)

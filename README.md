@@ -52,7 +52,7 @@ npx hardhat address --mnemonic ${MNEMONIC}
 ```
 
 The script will print out a public address corresponding to your mnemonic.
-Then, you can use this address to receive free KAIA using [Kairos's faucet](https://www.kaia.io/faucet).
+Then, you can use this address to receive free KAIA using [Kairos faucet](https://www.kaia.io/faucet).
 
 ### Private key
 
