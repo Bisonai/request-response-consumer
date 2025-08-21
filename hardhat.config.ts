@@ -41,13 +41,13 @@ const config: HardhatUserConfig = {
       ...commonConfig,
       url: process.env.PROVIDER || 'http://127.0.0.1:8545'
     },
-    baobab: {
+    kairos: {
       url: process.env.PROVIDER || 'https://public-en.kairos.node.kaia.io',
       chainId: 1001,
       ...commonConfig,
       gasPrice: 250_000_000_000
     },
-    cypress: {
+    mainnet: {
       url: process.env.PROVIDER || 'https://public-en.node.kaia.io'
       ...commonConfig,
       gasPrice: 250_000_000_000
@@ -58,13 +58,13 @@ const config: HardhatUserConfig = {
       default: 0
     },
     prepayment: {
-      baobab: '0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7',
-      cypress: '0xc2C88492Cf7e5240C3EB49353539E75336960600',
+      kairos: '0x8d3A1663d10eEb0bC9C9e537e1BBeA69383194e7',
+      mainnet: '0xc2C88492Cf7e5240C3EB49353539E75336960600',
       localhost: '0x5FbDB2315678afecb367f032d93F642f64180aa3'
     },
     requestResponseCoordinator: {
-      baobab: '0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0',
-      cypress: '0x159F3BB6609B4C709F15823F3544032942106042',
+      kairos: '0x5fe8a7445bFDB2Cd6d9f1DcfB3B33D8c365FFdB0',
+      mainnet: '0x159F3BB6609B4C709F15823F3544032942106042',
       localhost: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'
     }
   }
