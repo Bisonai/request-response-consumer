@@ -16,11 +16,11 @@ async function main() {
     const accId = txReceipt.events[0].args.accId.toString()
     console.log(`Account ID: ${accId}`)
 
-    // Deposit 5 KLAY
-    const klayAmount = '5'
-    const amount = ethers.utils.parseEther(klayAmount)
+    // Deposit $KAIA
+    const kaiaAmount = '5'
+    const amount = ethers.utils.parseEther(kaiaAmount)
     await (await prepayment.deposit(accId, { value: amount })).wait()
-    console.log(`Deposited ${klayAmount} KLAY to account ID ${accId}`)
+    console.log(`Deposited ${kaiaAmount} $KAIA to account ID ${accId}`)
 
     // Add RequestResponseConsumer as consumer of Prepayment account
     const consumerAddress = (await ethers.getContract('RequestResponseConsumer')).address
